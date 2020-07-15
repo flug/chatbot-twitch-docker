@@ -50,6 +50,10 @@ services:
         build:
             context: .
             dockerfile: ./docker/client/Dockerfile
+        depends_on:
+            - dev-tls
+        volumes:
+            - ./client:/usr/srv/client
         ports:
             -   target: 80
                 published: 8081

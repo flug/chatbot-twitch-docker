@@ -8,5 +8,5 @@ COPY client .
 
 RUN yarn
 
-CMD ["yarn", "server"]
+CMD ["yarn", "start"]
 
