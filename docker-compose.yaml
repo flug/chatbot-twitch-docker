@@ -15,6 +15,7 @@ services:
 
         env_file:
             - ./chatbot/.env
+        restart: on-failure
 
 
     mercure:
@@ -54,6 +55,9 @@ services:
             - dev-tls
         volumes:
             - ./client:/usr/srv/client
+            - ./client/config/development.js:/usr/srv/client/src/config.js:ro
+        env_file:
+            - ./chatbot/.env
         ports:
             -   target: 80
                 published: 8081
